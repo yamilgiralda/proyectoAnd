@@ -28,7 +28,7 @@ public class View extends JFrame implements ActionListener, Observers {
 	/*Tabla*/
 	private JTable table;
 	private JScrollPane JP;
-	private DefaultTableModel modelo = new DefaultTableModel();
+	private DefaultTableModel tabla = new DefaultTableModel();
 	
 	/*Menu*/
 	JMenuBar menuBar = new JMenuBar();
@@ -67,7 +67,7 @@ public class View extends JFrame implements ActionListener, Observers {
 		
 		/*Tabla*/
 		table = new JTable();	
-		table.setModel(modelo);		
+		table.setModel(tabla);		
 		JP = new JScrollPane(table);
 		JP.setBounds(0,0,screenSize.width/2, screenSize.height);
 		contentPane.add(JP);
@@ -75,17 +75,24 @@ public class View extends JFrame implements ActionListener, Observers {
 	
 	/*Metodo que agrega el nombre de las columnas*/
 	public void add_Column(String column){
-		modelo.addColumn(column);
+		tabla.addColumn(column);
 	}
 	
 	/*Metodo que agrega filas*/
 	public void add_Fila(Object []object){
-		modelo.addRow(object);
+		tabla.addRow(object);
 	}
 	
+	/*Metodo que limpia la tabla*/
+	public void clear_all(){
+		tabla.setColumnCount(0);
+		tabla.setRowCount(0);
+	}
+	
+	/*Eventos*/
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == Clientes){
-			model.get_clientes();
+			model.print_clientes();
 		}
 	}
 }

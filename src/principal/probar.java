@@ -46,6 +46,10 @@ public class probar {
 		object[7] = "4635894";
 		modelo.addRow(object);
 		
+		/*Borrar Todo*/
+		/*modelo.setColumnCount(0);
+		modelo.setRowCount(0);*/
+		
 	}
 	
 }

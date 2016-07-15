@@ -7,7 +7,7 @@ public class Main {
 		View view = new View(model);
 		view.setVisible(true);
 		
-		//model.get_clientes();
+		
 		
 		//probar Probar = new probar();
 		
